@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js-exchange rate</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" async></script>
+    <script src="js/all.js" async></script>
+</head>
+<body>
+    <div id="app">
+        <h1>現金匯率轉換</h1>
+        <div class="before">
+            <input type="number" v-model="beforeMoney" @change="changeMoney()">
+            <select id="changeBefore" v-model="beforeValue" @change="changeMoney()">
+                <option value="TWD">台幣</option>
+                <option value="USD">美金</option>
+                <option value="GBP">英鎊</option>
+                <option value="HKD">港幣</option>
+                <option value="JPY">日圓</option>
+                <option value="KRW">韓元</option>
+                <option value="THB">泰幣</option>
+            </select>
+            <p class="word">轉換成</p>
+            <select id="changefter" v-model="afterValue" @change="changeMoney()">
+                <option value="TWD">台幣</option>
+                <option value="USD">美金</option>
+                <option value="GBP">英鎊</option>
+                <option value="HKD">港幣</option>
+                <option value="JPY">日圓</option>
+                <option value="KRW">韓元</option>
+                <option value="THB">泰幣</option>
+            </select>
+        </div>
+        <div class="after">
+            <span>等於</span>
+            <span>{{finMoney}} {{sign}}</span>
+        </div>
+        <p class="time">◆ 牌價掛牌時間：2019/11/07 09:50</p>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">幣別</th>
+                    <th colspan="2">現金匯率</th>
+                </tr>
+                <tr>
+                    <th>本行買入</th>
+                    <th>本行賣出</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>美金 (USD)</td>
+                    <td>30</td>
+                    <td>30.67</td>
+                </tr>
+                <tr>
+                    <td>英鎊 (GBP)</td>
+                    <td>37</td>
+                    <td>39.99</td>
+                </tr>
+                <tr>
+                    <td>港幣 (HKD)</td>
+                    <td>3.728</td>
+                    <td>3.932</td>
+                </tr>
+                <tr>
+                    <td>日圓 (JPY)</td>
+                    <td>0.2702</td>
+                    <td>0.283</td>
+                </tr>
+                <tr>
+                    <td>韓元 (KRW)</td>
+                    <td>0.02446</td>
+                    <td>0.02836</td>
+                </tr>
+                <tr>
+                    <td>泰幣 (THB)</td>
+                    <td>0.8795</td>
+                    <td>1.0675</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

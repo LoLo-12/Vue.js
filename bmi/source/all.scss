@@ -1,0 +1,89 @@
+*{
+  font-family: 微軟正黑體;
+  // border: solid 1px
+  color: #343434;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box{
+  border: solid 2px;
+  padding: 5px 0 25px 0;
+  width: 500px;
+  border-radius: 15px;
+}
+
+h1{
+  background-color: #0E34A0;
+  color: #E8F0FF;
+  text-align: center;
+}
+
+#app{
+  padding: 15px 10px;
+  font-size: 18px;
+  padding-bottom: 0;
+  input{
+    font-size: 18px;
+    width: 100px;
+  }
+  button{
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: solid 2px ;
+    padding: 3px 8px;
+    background-color: transparent;
+    &:hover{
+      background-color: #E8F0FF;
+    }
+    &:active{
+      transform: translatey(1px);
+    }
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    .item, .suggest{
+      font-weight: 800;
+      font-size: 20px;
+      color: #ff7b00;
+    }
+    .suggest{
+      margin-top: 10px;
+    }
+  }   
+}
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  tr{
+    border-bottom: dashed 1px;
+  }
+  td{
+    padding-left: 15px;
+  }
+}
+
+.record{
+  li{
+    margin: 5px 0;
+    text-align: center;
+  }
+  .recordTitle{
+    text-align: left;
+    color: #0E34A0;
+    font-weight: 800;
+  }
+}

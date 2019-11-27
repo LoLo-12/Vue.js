@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js-BMI</title>
+    <link rel="stylesheet" href="css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" async></script>
+    <script src="js/all.js" async></script>
+</head>
+<body>
+    <div class="box">
+        <h1>BMI calculator</h1>
+        <div id="app">
+            <div class="check">
+                <label for="height">身高</label>
+                <input type="number" id="height" v-model.number="height" @keyup.enter="suggest">
+                <label for="weight">體重</label>
+                <input type="number" id="weight" v-model.number="weight" @keyup.enter="suggest">
+                <button type="button" @click="suggest">判斷建議</button>
+                <button type="button" @click="storage">紀錄</button>
+            </div>
+            <ul class="ulItem">
+                <li class="item">
+                    <span>身高: {{height}}cm,</span>
+                    <span>體重: {{weight}}kg,</span>
+                    <span>BMI: {{calculator}}</sapn>
+                </li>
+                <li class="suggest">建議 : {{status}}</li>
+            </ul>
+            <ul class="record">
+                </table>
+        </div>
+        <table>
+            <tr>
+                <th>成人肥胖定義</th>
+                <th>身體質量指數(BMI)(kg/m^2) </th>
+                <th>腰圍(cm)</th>
+            </tr>
+            <tr>
+                <td>體重過輕</td>
+                <td>BMI<18.5</td> <td>
+                </td>
+            </tr>
+            <tr>
+                <td>健康體位</td>
+                <td>18.5<=BMI<24</td> <td>
+                </td>
+            </tr>
+            <tr>
+                <td>體位異常</td>
+                <td>過重：24<=BMI<27 <br>輕度肥胖：27 <= BMI < 30 <br>中度肥胖：30 <= BMI < 35 <br>重度肥胖：BMI >= 35</td>
+                <td>男性：>= 90 公分
+                    <br>女性：>= 80 公分</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
